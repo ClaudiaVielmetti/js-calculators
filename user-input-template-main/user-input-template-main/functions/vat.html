@@ -12,13 +12,25 @@
     
     <body>
         
-        <h1 id="title">
-            VAT Calculator
-        </h1>
-
-        <div id="app">
-            View the answer in the console
+    <h1>Vat Calculator</h1>
+        <label>Amount: </label>
+        <input type="number" class="input-number">
+        <br><br>
+        <label>Vat Percentage: </label>
+        <input type="number"  placeholder="14%" class="vat-amount" value="14">
+        <br>
+        <br>
+        <div>
+        <button type="button" onclick="calculate()">Click to Calculate</button>
         </div>
+        <br><br>
+        <div id="total-amount">
+
+        </div>
+        <br>
+        <div id="vat-amount"
+        ></div>
+
 
         <!-- Start of Script -->
         <script>
@@ -28,9 +40,26 @@
 
             // Get user input and save to variable
                 // code here..
-
+            function calculate(){
+                let amount = Number(document.querySelector(".input-number").value);
+                let vat = Number(document.querySelector(".vat-amount").value);
+                let vatAmount, totalAmount, outputVat, outputTotal;
+            }
             // Perform calculation here
-            let result;// save result of calculation to answer variable.
+            
+            vat /= 100;
+            vatAmount = vat * amount;
+            totalAmount = vatAmount + vat; 
+
+            outputTotal = "<span>Your total: <small>" + totalAmount.toFixed(2) + " Rand</small></span>"
+            document.getElementById("total-amount").innerHTML = outputTotal;
+
+
+            outputVat = "<span>Your Vat is: <small>" + vatAmount + " Rand</small></span>";
+
+             document.getElementById("vat-amount").innerHTML = outputVat;
+            
+            
 
             // log VAT out to consol, DOM, or alert
             console.log("The VAT of entered amount is " + result);
