@@ -17,7 +17,7 @@
         <input type="number" class="input-number">
         <br><br>
         <label>Vat Percentage: </label>
-        <input type="number"  placeholder="14%" class="vat-amount" value="14%">
+        <input type="percentage"  placeholder="15%" class="vat-amount" value="15%">
         <br>
         <br>
         <div>
@@ -26,10 +26,12 @@
         <br><br>
         <div id="total-amount">
 
+        <div>
+            <label>
+                Result:
+            </label>
+            <input type="text" readonly id="result"/>
         </div>
-        <br>
-        <div id="vat-amount"
-        ></div>
 
 
 
@@ -37,10 +39,13 @@
         <script>
             
             // VAT constant:
-            const vat = 14;
+            const vat = 15;
+
 
             // Get user input and save to variable
                 // code here..
+
+         
 
             // Perform calculation here
             let result;// save result of calculation to answer variable.
